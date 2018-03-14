@@ -109,8 +109,7 @@
 + SetSpeed(speed : float) : float
 + SetChassisRotation(roation : float) : float
 + SetTurretRotation(rotation : float ) : float
-
-</y:MethodLabel>
++ setTick(tick: uint32) : void</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
