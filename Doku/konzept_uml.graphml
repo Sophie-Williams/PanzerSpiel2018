@@ -56,8 +56,8 @@
 - ammuntion : int
 - cannon_loaded : bool
 - remaining_reload_time : float
-</y:AttributeLabel>
-            <y:MethodLabel/>
+- nextMove: Move</y:AttributeLabel>
+            <y:MethodLabel>+ getMove: Move</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -95,7 +95,7 @@
           <y:Geometry height="168.49886067708348" width="300.80737087673845" x="800.5240851024296" y="613.0289711131368"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="84.16455078125" x="108.32141004774422" y="3.0">ITankControl<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="80.552734375" x="110.12731825086922" y="3.0">TankControl<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -103,8 +103,7 @@
             </y:ModelParameter>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel>- tank : Tank
-- nextMove : Move</y:AttributeLabel>
+            <y:AttributeLabel>- tank : Tank</y:AttributeLabel>
             <y:MethodLabel>+ Shoot : void
 - Reload : void
 + SetSpeed(speed : float) : float
@@ -133,7 +132,7 @@
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>- objects : vector&lt;GameObject&gt;
 - map : array&lt;maptile&gt; [size_x][size_y]</y:AttributeLabel>
-            <y:MethodLabel/>
+            <y:MethodLabel>+ applyMoves(tick: uint32): void</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -200,7 +199,7 @@
             </y:ModelParameter>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel>- mytanks : vector&lt;BotTankControl&gt;
+            <y:AttributeLabel>- mytanks : vector&lt;TankControl&gt;
 - tank_amount : int 
 - myfaction : int</y:AttributeLabel>
             <y:MethodLabel>+ CreateMove(tick : uint) : void</y:MethodLabel>
@@ -291,6 +290,25 @@
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e2" source="n3" target="n1">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="34.017578125" x="-188.58678919227475" y="-40.42242534223419">friend<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="right" ratio="0.5" segment="0"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
