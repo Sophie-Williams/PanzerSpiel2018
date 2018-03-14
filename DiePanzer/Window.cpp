@@ -3,7 +3,7 @@
 #include <Dwmapi.h> 
 #pragma comment(lib, "Dwmapi.lib")
 
-#include "WindowProcedure.h"
+#include "WindowsProcedure.h"
 
 bool Window::Setup()
 {

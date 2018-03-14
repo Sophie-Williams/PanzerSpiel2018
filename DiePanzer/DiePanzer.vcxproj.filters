@@ -64,6 +64,9 @@
     <ClInclude Include="WindowsProcedure.h">
       <Filter>Game\Core</Filter>
     </ClInclude>
+    <ClInclude Include="InputSystem.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -79,6 +82,9 @@
       <Filter>Game\Core</Filter>
     </ClCompile>
     <ClCompile Include="WindowsProcedure.cpp">
+      <Filter>Game\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="InputSystem.cpp">
       <Filter>Game\Core</Filter>
     </ClCompile>
   </ItemGroup>

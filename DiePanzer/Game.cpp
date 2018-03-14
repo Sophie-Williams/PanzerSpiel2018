@@ -6,6 +6,10 @@
 #define TICKRATE 60
 #define MS_PER_TICK 1.0f / TICKRATE
 
+void beep()
+{
+	Beep(500, 200);
+}
 
 void Game::Setup()
 {
@@ -13,6 +17,9 @@ void Game::Setup()
 	Window::GetInstance().Setup();
 
 	// Add Players?
+	InputSystem& input = InputSystem::GetInstance();
+	input.RegisterHotkey(VK_LBUTTON, beep);
+
 	// Start Loop
 }
 
