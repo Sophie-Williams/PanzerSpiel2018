@@ -17,9 +17,6 @@
     <Filter Include="Game\API">
       <UniqueIdentifier>{aee5c9ce-e80a-42ca-aaaf-f8a806b58ee5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Core\World">
-      <UniqueIdentifier>{25b68f01-91e8-43c5-bec2-43d5e6c25206}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -52,9 +49,6 @@
     <ClInclude Include="TankControl.h">
       <Filter>Game\Controls</Filter>
     </ClInclude>
-    <ClInclude Include="World.h">
-      <Filter>Game\Core\World</Filter>
-    </ClInclude>
     <ClInclude Include="Window.h">
       <Filter>Game\Core</Filter>
     </ClInclude>
@@ -65,6 +59,9 @@
       <Filter>Game\Core</Filter>
     </ClInclude>
     <ClInclude Include="InputSystem.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
       <Filter>Game\Core</Filter>
     </ClInclude>
   </ItemGroup>
