@@ -17,30 +17,21 @@
     <Filter Include="Game\API">
       <UniqueIdentifier>{aee5c9ce-e80a-42ca-aaaf-f8a806b58ee5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Core\World">
-      <UniqueIdentifier>{25b68f01-91e8-43c5-bec2-43d5e6c25206}</UniqueIdentifier>
+    <Filter Include="Game\Core\IO">
+      <UniqueIdentifier>{1038a5a8-f56b-428d-8c29-8daaa7f1edfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Core\Misc">
+      <UniqueIdentifier>{38747941-c871-4287-9c81-b3d18a056565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Core\Models">
+      <UniqueIdentifier>{f9b2db96-caba-4d09-b4c0-1794a02bb547}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Callback.h">
-      <Filter>Game\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Game\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Game\Core</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Game\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Tank.h">
-      <Filter>Game\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
       <Filter>Game\Core</Filter>
     </ClInclude>
     <ClInclude Include="Vector.h">
@@ -52,40 +43,55 @@
     <ClInclude Include="TankControl.h">
       <Filter>Game\Controls</Filter>
     </ClInclude>
-    <ClInclude Include="World.h">
-      <Filter>Game\Core\World</Filter>
+    <ClInclude Include="InputSystem.h">
+      <Filter>Game\Core\IO</Filter>
     </ClInclude>
     <ClInclude Include="Window.h">
-      <Filter>Game\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Game\Core</Filter>
+      <Filter>Game\Core\IO</Filter>
     </ClInclude>
     <ClInclude Include="WindowsProcedure.h">
-      <Filter>Game\Core</Filter>
+      <Filter>Game\Core\IO</Filter>
     </ClInclude>
-    <ClInclude Include="InputSystem.h">
-      <Filter>Game\Core</Filter>
+    <ClInclude Include="Singleton.h">
+      <Filter>Game\Core\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Callback.h">
+      <Filter>Game\Core\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Game\Core\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>Game\Core\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Game\Core\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Game\Core\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Game\Core\Models</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Game\Core</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Game\Core</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Game\Core</Filter>
     </ClCompile>
+    <ClCompile Include="InputSystem.cpp">
+      <Filter>Game\Core\IO</Filter>
+    </ClCompile>
     <ClCompile Include="Window.cpp">
-      <Filter>Game\Core</Filter>
+      <Filter>Game\Core\IO</Filter>
     </ClCompile>
     <ClCompile Include="WindowsProcedure.cpp">
-      <Filter>Game\Core</Filter>
+      <Filter>Game\Core\IO</Filter>
     </ClCompile>
-    <ClCompile Include="InputSystem.cpp">
-      <Filter>Game\Core</Filter>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Game\Core\Misc</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
