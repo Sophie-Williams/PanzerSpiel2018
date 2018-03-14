@@ -55,6 +55,15 @@
     <ClInclude Include="World.h">
       <Filter>Game\Core\World</Filter>
     </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsProcedure.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -64,6 +73,12 @@
       <Filter>Game\Core</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
+      <Filter>Game\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Game\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsProcedure.cpp">
       <Filter>Game\Core</Filter>
     </ClCompile>
   </ItemGroup>
