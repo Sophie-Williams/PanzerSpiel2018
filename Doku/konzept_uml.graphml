@@ -77,7 +77,7 @@
             </y:ModelParameter>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel>- objects : vector&lt;GameObject&gt; 
+            <y:AttributeLabel>- objects : vector&lt;GameObject*&gt; 
 - world : world
 - tick : uint
 - playerlist : vector&lt;Player&gt;</y:AttributeLabel>
