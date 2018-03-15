@@ -6,7 +6,6 @@ class Move {
 private:
 	float cannon_rotation;
 	float chassis_rotation;
-	float acceleration:
+	float acceleration;
 	uint_least32_t tick;
-
 };

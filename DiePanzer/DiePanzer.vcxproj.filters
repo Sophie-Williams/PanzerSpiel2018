@@ -1,109 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Game">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Game\Core">
-      <UniqueIdentifier>{c83c0b6a-a154-4346-a74c-e33dfd2d496d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Math">
-      <UniqueIdentifier>{6b5069ae-f9c7-41f6-9d20-62becf4e6085}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Controls">
-      <UniqueIdentifier>{d93b1455-7a8e-4281-a116-bce797d5dc80}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\API">
-      <UniqueIdentifier>{aee5c9ce-e80a-42ca-aaaf-f8a806b58ee5}</UniqueIdentifier>
-    </Filter>
-<<<<<<< HEAD
-    <Filter Include="Game\Core\IO">
-      <UniqueIdentifier>{1038a5a8-f56b-428d-8c29-8daaa7f1edfe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Core\Misc">
-      <UniqueIdentifier>{38747941-c871-4287-9c81-b3d18a056565}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Core\Models">
-      <UniqueIdentifier>{f9b2db96-caba-4d09-b4c0-1794a02bb547}</UniqueIdentifier>
-    </Filter>
-=======
->>>>>>> 3b064158a125b1ec9e7aa583747e72feb00b7512
+    <ClCompile Include="WindowsProcedure.cpp">
+      <Filter>Core\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Core\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="InputSystem.cpp">
+      <Filter>Core\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Core\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WindowsProcedure.h">
+      <Filter>Core\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Core\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="InputSystem.h">
+      <Filter>Core\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="BotAPI.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>Game\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Game\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Core\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Callback.h">
+      <Filter>Core\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Core\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Core\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="TankControl.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Game\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>Game\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="BotAPI.h">
-      <Filter>Game\API</Filter>
-    </ClInclude>
-    <ClInclude Include="TankControl.h">
-      <Filter>Game\Controls</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="InputSystem.h">
-      <Filter>Game\Core\IO</Filter>
-    </ClInclude>
-=======
->>>>>>> 3b064158a125b1ec9e7aa583747e72feb00b7512
-    <ClInclude Include="Window.h">
-      <Filter>Game\Core\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowsProcedure.h">
-      <Filter>Game\Core\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Game\Core\Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="Callback.h">
-      <Filter>Game\Core\Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Game\Core\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Tank.h">
-      <Filter>Game\Core\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Game\Core\Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Game\Core\Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="World.h">
-      <Filter>Game\Core\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="World.h">
-      <Filter>Game\Core</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Game\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Game\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="InputSystem.cpp">
-      <Filter>Game\Core\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>Game\Core\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowsProcedure.cpp">
-      <Filter>Game\Core\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Game\Core\Misc</Filter>
-    </ClCompile>
-    <ClCompile Include="World.cpp">
-      <Filter>Game\API</Filter>
-    </ClCompile>
+    <Filter Include="Core">
+      <UniqueIdentifier>{3aa4060b-e2c1-4cae-9ec0-5264601605ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Math">
+      <UniqueIdentifier>{c10ca867-ea46-4f1f-a01e-d1c2a1901e45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO">
+      <UniqueIdentifier>{63883efb-a8d3-4dd3-967c-420f3353d827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{6e19901d-13b0-46ea-beba-782a1cb6c0a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Models">
+      <UniqueIdentifier>{965ce9bb-de39-47da-a68a-ab28bb43d405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Utility">
+      <UniqueIdentifier>{62901fb4-a5e4-40b8-9c84-00835e09be86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
