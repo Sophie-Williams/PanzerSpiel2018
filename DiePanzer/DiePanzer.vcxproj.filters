@@ -1,54 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="InputSystem.cpp" />
-    <ClCompile Include="Window.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="WindowsProcedure.cpp" />
+    <Filter Include="Game">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Game\Core">
+      <UniqueIdentifier>{c83c0b6a-a154-4346-a74c-e33dfd2d496d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Math">
+      <UniqueIdentifier>{6b5069ae-f9c7-41f6-9d20-62becf4e6085}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Controls">
+      <UniqueIdentifier>{d93b1455-7a8e-4281-a116-bce797d5dc80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\API">
+      <UniqueIdentifier>{aee5c9ce-e80a-42ca-aaaf-f8a806b58ee5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Core\World">
+      <UniqueIdentifier>{25b68f01-91e8-43c5-bec2-43d5e6c25206}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BotAPI.h" />
-    <ClInclude Include="Callback.h" />
-    <ClInclude Include="InputSystem.h" />
-    <ClInclude Include="Singleton.h" />
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="TankControl.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Tank.h" />
-    <ClInclude Include="targetver.h" />
-    <ClInclude Include="Vector.h" />
-    <ClInclude Include="WindowsProcedure.h" />
-    <ClInclude Include="World.h" />
-  </ItemGroup>
-  <ItemGroup>
-<<<<<<< HEAD
     <Text Include="ReadMe.txt" />
-=======
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Callback.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Game\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="BotAPI.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="TankControl.h">
+      <Filter>Game\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Game\Core\World</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Game\Core</Filter>
+    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Game\Core</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Game\Core</Filter>
     </ClCompile>
-    <ClCompile Include="InputSystem.cpp">
-      <Filter>Game\Core\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>Game\Core\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowsProcedure.cpp">
-      <Filter>Game\Core\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Game\Core\Misc</Filter>
-    </ClCompile>
-    <ClCompile Include="World.cpp">
-      <Filter>Game\API</Filter>
-    </ClCompile>
->>>>>>> b8ee2550f6e872d82a6c877c82e553addff54d9f
   </ItemGroup>
 </Project>
