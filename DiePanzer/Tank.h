@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include "GameObject.h"
-
+#include "Move.h"
 
 class Tank : public GameObject
 {
@@ -12,4 +12,8 @@ private:
 	uint32_t ammo;
 	bool cannon_loaded;
 	uint32_t remaining_reload_time;
+	Move nextMove;
+
+public:
+	Move Get_move();
 };
