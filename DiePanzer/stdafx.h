@@ -9,7 +9,7 @@
 
 #define WIN32_LEAN_AND_MEAN             // Selten verwendete Komponenten aus Windows-Headern ausschlieﬂen
 // Windows-Headerdateien:
-#include <windows.h>
+#include <Windows.h>
 
 // C RunTime-Headerdateien
 #include <stdlib.h>
@@ -20,3 +20,6 @@
 
 // TODO: Hier auf zus‰tzliche Header, die das Programm erfordert, verweisen.
 #include "Game.h"
+#include "Singleton.h"
+#include "Window.h"
+#include "InputSystem.h"
