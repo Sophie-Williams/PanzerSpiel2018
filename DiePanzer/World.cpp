@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "World.h"
+#include "Tank.h"
+
+
 
 void World::Apply_moves(uint_fast32_t tick) {
 	GameObject *object_a, *object_b;

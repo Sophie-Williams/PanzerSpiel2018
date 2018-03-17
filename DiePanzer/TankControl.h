@@ -1,7 +1,6 @@
 #pragma once
 #include "Tank.h"
 
-
 class TankControl
 {
 private:

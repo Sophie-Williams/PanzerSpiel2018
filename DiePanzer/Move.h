@@ -1,7 +1,6 @@
 #pragma once
-
 #include <cstdint>
-#include "TankControl.h"
+
 
 class Move {
 	friend class TankControl;

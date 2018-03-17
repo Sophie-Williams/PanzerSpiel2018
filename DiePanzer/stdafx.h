@@ -10,15 +10,13 @@
 #define WIN32_LEAN_AND_MEAN             // Selten verwendete Komponenten aus Windows-Headern ausschlieﬂen
 // Windows-Headerdateien:
 #include <Windows.h>
+//
+//// C RunTime-Headerdateien
+//#include <stdlib.h>
+//#include <malloc.h>
+//#include <memory.h>
+//#include <tchar.h>
 
-// C RunTime-Headerdateien
-#include <stdlib.h>
-#include <malloc.h>
-#include <memory.h>
-#include <tchar.h>
-
-// declares that we are going to use dx11
-#define RENDERENGINE_DX11
 
 // TODO: Hier auf zus‰tzliche Header, die das Programm erfordert, verweisen.
 #include "Game.h"
