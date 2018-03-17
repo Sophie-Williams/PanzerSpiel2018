@@ -28,6 +28,9 @@
     <ClCompile Include="Graphics.cpp">
       <Filter>Core\IO\Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="Move.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WindowsProcedure.h">
@@ -72,6 +75,7 @@
     <ClInclude Include="TankControl.h">
       <Filter>Game</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="D3D.h">
       <Filter>Core\IO\Rendering</Filter>
     </ClInclude>
@@ -83,6 +87,16 @@
     </ClInclude>
     <ClInclude Include="Color.h">
       <Filter>Core\IO\Rendering</Filter>
+=======
+    <ClInclude Include="Graphics.h">
+      <Filter>Core\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="DX11Render.h">
+      <Filter>Core\IO</Filter>
+>>>>>>> f65e168d2b1270ea816c673cd099269d0c000f9c
+    </ClInclude>
+    <ClInclude Include="Move.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,7 @@ private:
 	float acceleration;
 	uint_fast32_t tick;
 public:
-	float get_cannon_rotation() { return cannon_rotation; }
+	float get_turret_rotation() { return cannon_rotation; }
 	float get_chassis_rotation() { return chassis_rotation; }
 	float get_acceleration() { return acceleration; }
 	uint_fast32_t get_tick() { return tick; }
