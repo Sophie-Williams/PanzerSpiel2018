@@ -2,6 +2,7 @@
 #include "Callback.h"
 #include <chrono>
 #include "World.h"
+#include "Game.h"
 #define TICKRATE 60
 #define MS_PER_TICK 1.0f / TICKRATE
 
