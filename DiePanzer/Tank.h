@@ -9,10 +9,7 @@ class Tank : public GameObject
 {
 	friend class World;
 	friend class Tankcontrol;
-<<<<<<< HEAD
 
-=======
->>>>>>> f65e168d2b1270ea816c673cd099269d0c000f9c
 private:
 	float turret_orientation;
 	float chassis_orientation;
