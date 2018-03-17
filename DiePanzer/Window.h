@@ -1,9 +1,6 @@
 #pragma once
 
-#define WINDOW_WIDTH_DEFAULT 800
-#define WINDOW_HEIGTH_DEFUALT 600
-
-class Window : public Singleton<Window>
+class Window
 {
 private:
 	HWND hWindow;
@@ -11,12 +8,14 @@ private:
 
 	int width;
 	int height;
-	int x;
-	int y;
+	int pos_x;
+	int pos_y;
 
 public:
+	Window(unsigned int width, unsigned int height);
 	~Window();
-
-	HWND GetHandle();
-	bool Setup();
+	
+	bool Setup(HWND& window);
+	unsigned int GetClientSizeWidth();
+	unsigned int GetClientSizeHeight();
 };

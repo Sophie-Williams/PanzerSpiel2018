@@ -17,9 +17,11 @@
 #include <memory.h>
 #include <tchar.h>
 
+// declares that we are going to use dx11
+#define RENDERENGINE_DX11
 
 // TODO: Hier auf zusätzliche Header, die das Programm erfordert, verweisen.
 #include "Game.h"
 #include "Singleton.h"
-#include "Window.h"
+#include "Graphics.h"
 #include "InputSystem.h"

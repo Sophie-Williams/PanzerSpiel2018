@@ -95,6 +95,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -106,6 +107,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -144,6 +146,8 @@
   <ItemGroup>
     <ClInclude Include="BotAPI.h" />
     <ClInclude Include="Callback.h" />
+    <ClInclude Include="DX11Render.h" />
+    <ClInclude Include="Graphics.h" />
     <ClInclude Include="InputSystem.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Window.h" />
@@ -158,6 +162,8 @@
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DX11Render.cpp" />
+    <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="InputSystem.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="Game.cpp" />

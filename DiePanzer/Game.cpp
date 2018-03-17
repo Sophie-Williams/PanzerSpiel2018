@@ -2,9 +2,12 @@
 #include "Callback.h"
 #include <chrono>
 #include "World.h"
-
 #define TICKRATE 60
 #define MS_PER_TICK 1.0f / TICKRATE
+
+
+// only visible in this file
+static Graphics* graphics;
 
 void beep()
 {
@@ -14,7 +17,8 @@ void beep()
 void Game::Setup()
 {
 	// Setup Window
-	Window::GetInstance().Setup();
+	graphics = &Graphics::GetInstance();
+	graphics->Initialize();
 
 	// Add Players?
 	InputSystem& input = InputSystem::GetInstance();
@@ -50,7 +54,7 @@ void Game::MainLoop()
 
 
 			// Draw
-			InvalidateRect(Window::GetInstance().GetHandle(), NULL, false); // force repaint
+			InvalidateRect(graphics->GetWindowHandle(), NULL, false); // force repaint
 			Sleep(start.count() + MS_PER_TICK - std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count());
 		}
 	}
