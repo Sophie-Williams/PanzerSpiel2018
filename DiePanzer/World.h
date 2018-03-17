@@ -4,6 +4,7 @@
 #include "GameObject.h"
 #include "Tank.h"
 #include <cstdint>
+#include <cmath>
 
 #define WORLD_DEFAULT_WIDTH 800
 #define WORLD_DEFAULT_HEIGHT 600

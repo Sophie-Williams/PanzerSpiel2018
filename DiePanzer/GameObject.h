@@ -11,9 +11,12 @@ enum class ClassID
 class GameObject
 {
 private:
+
+protected:
+	Vector2 coordinates;	///element 0: x, element 1: y
 	uint32_t id;
-	Vector2 coordinates;
 	uint32_t faction;
 public:
 	virtual ClassID Get_type() = 0;
+
 };
