@@ -21,4 +21,10 @@ private:
 
 public:
 	Move Get_move();
+
+	// Geerbt über GameObject
+	ClassID Tank::Get_type()
+	{
+		return ClassID();
+	}
 };

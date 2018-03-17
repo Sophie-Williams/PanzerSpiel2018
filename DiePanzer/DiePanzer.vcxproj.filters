@@ -1,128 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="WindowsProcedure.cpp">
-      <Filter>Core\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>Core\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="InputSystem.cpp">
-      <Filter>Core\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="World.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Core\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="DX11Render.cpp">
-      <Filter>Core\IO\Rendering</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics.cpp">
-      <Filter>Core\IO\Rendering</Filter>
-    </ClCompile>
-    <ClCompile Include="Move.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
+    <ClCompile Include="DX11Render.cpp" />
+    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="InputSystem.cpp" />
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="WindowsProcedure.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WindowsProcedure.h">
-      <Filter>Core\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="Window.h">
-      <Filter>Core\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="InputSystem.h">
-      <Filter>Core\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="BotAPI.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="World.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Tank.h">
-      <Filter>Game\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Game\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Core\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Callback.h">
-      <Filter>Core\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Core\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Core\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>Core\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="TankControl.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="D3D.h">
-      <Filter>Core\IO\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="DX11Render.h">
-      <Filter>Core\IO\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics.h">
-      <Filter>Core\IO\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="Color.h">
-      <Filter>Core\IO\Rendering</Filter>
-=======
-    <ClInclude Include="Graphics.h">
-      <Filter>Core\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="DX11Render.h">
-      <Filter>Core\IO</Filter>
->>>>>>> f65e168d2b1270ea816c673cd099269d0c000f9c
-    </ClInclude>
-    <ClInclude Include="Move.h">
-      <Filter>Game</Filter>
-    </ClInclude>
+    <ClInclude Include="BotAPI.h" />
+    <ClInclude Include="Callback.h" />
+    <ClInclude Include="DX11Render.h" />
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="InputSystem.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Window.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="TankControl.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Tank.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="WindowsProcedure.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Core">
-      <UniqueIdentifier>{3aa4060b-e2c1-4cae-9ec0-5264601605ed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Math">
-      <UniqueIdentifier>{c10ca867-ea46-4f1f-a01e-d1c2a1901e45}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\IO">
-      <UniqueIdentifier>{63883efb-a8d3-4dd3-967c-420f3353d827}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game">
-      <UniqueIdentifier>{6e19901d-13b0-46ea-beba-782a1cb6c0a5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Models">
-      <UniqueIdentifier>{965ce9bb-de39-47da-a68a-ab28bb43d405}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Utility">
-      <UniqueIdentifier>{62901fb4-a5e4-40b8-9c84-00835e09be86}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\IO\Rendering">
-      <UniqueIdentifier>{95845d85-66b2-44c9-bd43-352d0e810772}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
 </Project>
