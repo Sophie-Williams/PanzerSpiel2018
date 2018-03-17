@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "DX11Render.h"
-
-
+#include "Color.h"
 
 DX11Renderer::DX11Renderer(HWND hostwindow)
 {
@@ -11,10 +10,11 @@ DX11Renderer::DX11Renderer(HWND hostwindow)
 
 void DX11Renderer::RenderFrame()
 {
-	// clear the back buffer to a deep blue
-	devcon->ClearRenderTargetView(backbuffer, D3DXCOLOR(0.0f, 0.2f, 0.4f, 1.0f));
+	// clear the back buffer to a deep blue	
+	devcon->ClearRenderTargetView(backbuffer, Color{ 0.0f, 0.2f, 0.4f, 1.0f });
 
 	// do 3D rendering on the back buffer here
+
 
 	// switch the back buffer and the front buffer
 	swapchain->Present(0, 0);

@@ -23,10 +23,10 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="DX11Render.cpp">
-      <Filter>Core\IO</Filter>
+      <Filter>Core\IO\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="Graphics.cpp">
-      <Filter>Core\IO</Filter>
+      <Filter>Core\IO\Rendering</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,11 +72,17 @@
     <ClInclude Include="TankControl.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="D3D.h">
+      <Filter>Core\IO\Rendering</Filter>
+    </ClInclude>
     <ClInclude Include="DX11Render.h">
-      <Filter>Core\IO</Filter>
+      <Filter>Core\IO\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.h">
-      <Filter>Core\IO</Filter>
+      <Filter>Core\IO\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Core\IO\Rendering</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +106,9 @@
     </Filter>
     <Filter Include="Core\Utility">
       <UniqueIdentifier>{62901fb4-a5e4-40b8-9c84-00835e09be86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Rendering">
+      <UniqueIdentifier>{95845d85-66b2-44c9-bd43-352d0e810772}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
