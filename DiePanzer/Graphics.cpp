@@ -19,7 +19,7 @@ void Graphics::Frame()
 
 bool Graphics::Initialize()
 {
-	m_Window = new Window(800, 600);
+	m_Window = new Window(window_width, window_height);
 	
 	if (!m_Window->Setup(m_windowhandle))
 	{
@@ -28,13 +28,14 @@ bool Graphics::Initialize()
 	}		
 
 	m_Renderer = new DX11Renderer(m_windowhandle);
+	//TODO inno2: set Window size to something > 800x600, so the ClientSize is exactly 800x600
 	if (!m_Renderer->Initialize(m_Window->GetClientSizeWidth(), m_Window->GetClientSizeHeight()))
 	{
 		MessageBoxW(NULL, L"Failed to Create DX11", L"Panzerspiel", MB_OK | MB_TOPMOST);
 		return false;
 	}
 
-	return false;
+	return true;
 }
 
 HWND Graphics::GetWindowHandle()

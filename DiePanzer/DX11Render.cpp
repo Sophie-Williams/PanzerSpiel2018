@@ -66,8 +66,8 @@ bool DX11Renderer::Initialize(unsigned int width, unsigned int height)
 
 	viewport.TopLeftX = 0;
 	viewport.TopLeftY = 0;
-	viewport.Width = width;
-	viewport.Height = height;
+	viewport.Width = (float) width;
+	viewport.Height = (float) height;
 
 	devcon->RSSetViewports(1, &viewport);
 }

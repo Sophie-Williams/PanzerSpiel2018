@@ -38,7 +38,7 @@ void World::Apply_moves(uint_fast32_t tick) {
 			for (i_b = i_a + 1; i_b < objects.size(); i_b++) {
 				object_b = objects[i_b];
 
-
+				
 			}
 		}
 			

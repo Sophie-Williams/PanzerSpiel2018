@@ -3,8 +3,8 @@
 #include <chrono>
 #include "World.h"
 #include "Game.h"
-#define TICKRATE 60
-#define MS_PER_TICK 1.0f / TICKRATE
+#define TICKRATE (60)
+#define MS_PER_TICK (1.0f / TICKRATE)
 
 
 // only visible in this file
@@ -56,7 +56,7 @@ void Game::MainLoop()
 
 			// Draw
 			InvalidateRect(graphics->GetWindowHandle(), NULL, false); // force repaint
-			Sleep(start.count() + MS_PER_TICK - std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count());
+			Sleep(start.count() + (DWORD)(MS_PER_TICK + 0.5f) - std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count());
 		}
 	}
 }
