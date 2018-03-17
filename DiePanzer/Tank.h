@@ -9,6 +9,7 @@ class Tank : public GameObject
 {
 	friend class World;
 	friend class Tankcontrol;
+
 private:
 	float turret_orientation;	///0..2pi; 0 is forward in relation to the chassis; clockwise
 	float chassis_orientation;	///0...2pi; 0 is towards the top of the screen; clockwise
