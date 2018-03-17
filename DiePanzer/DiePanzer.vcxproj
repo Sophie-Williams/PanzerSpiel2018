@@ -72,13 +72,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -152,17 +152,11 @@
   <ItemGroup>
     <ClInclude Include="BotAPI.h" />
     <ClInclude Include="Callback.h" />
-<<<<<<< HEAD
-    <ClInclude Include="Color.h" />
-    <ClInclude Include="D3D.h" />
-    <ClInclude Include="DX11Render.h" />
-=======
     <ClInclude Include="DX11Render.h">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
       </DeploymentContent>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
->>>>>>> f65e168d2b1270ea816c673cd099269d0c000f9c
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="InputSystem.h" />
     <ClInclude Include="Move.h" />
