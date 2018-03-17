@@ -8,7 +8,7 @@
 class Tank : public GameObject 
 {
 	friend class World;
-	firend class Tankcontrol;
+	friend class Tankcontrol;
 private:
 	float turret_orientation;
 	float chassis_orientation;

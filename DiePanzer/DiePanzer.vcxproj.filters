@@ -28,6 +28,9 @@
     <ClCompile Include="Graphics.cpp">
       <Filter>Core\IO</Filter>
     </ClCompile>
+    <ClCompile Include="Move.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WindowsProcedure.h">
@@ -72,11 +75,14 @@
     <ClInclude Include="TankControl.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>Core\IO</Filter>
+    </ClInclude>
     <ClInclude Include="DX11Render.h">
       <Filter>Core\IO</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics.h">
-      <Filter>Core\IO</Filter>
+    <ClInclude Include="Move.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

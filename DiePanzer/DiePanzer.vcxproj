@@ -101,9 +101,15 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SDLCheck>true</SDLCheck>
+      <ShowIncludes>true</ShowIncludes>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -146,9 +152,14 @@
   <ItemGroup>
     <ClInclude Include="BotAPI.h" />
     <ClInclude Include="Callback.h" />
-    <ClInclude Include="DX11Render.h" />
+    <ClInclude Include="DX11Render.h">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </DeploymentContent>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="InputSystem.h" />
+    <ClInclude Include="Move.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="Game.h" />
@@ -162,9 +173,12 @@
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DX11Render.cpp" />
+    <ClCompile Include="DX11Render.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="InputSystem.cpp" />
+    <ClCompile Include="Move.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
