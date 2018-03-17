@@ -1,14 +1,18 @@
 #include "stdafx.h"
+#include "Graphics.h"
 #include "WindowsProcedure.h"
 #include "InputSystem.h"
 
 LRESULT WINAPI WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	static InputSystem& input = InputSystem::GetInstance();
+	static Graphics& graphics = Graphics::GetInstance();
 
 	switch (msg)
 	{
 	case WM_PAINT:
+		graphics.Frame();
+
 		break;
 	case WM_CREATE:
 		break;
