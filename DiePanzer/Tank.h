@@ -2,11 +2,15 @@
 #include <cstdint>
 #include "GameObject.h"
 #include "Move.h"
+#include "TankControl.h"
+#include "World.h"
 
-class Tank : public GameObject
+class Tank : public GameObject 
 {
+	friend class World;
+	firend class Tankcontrol;
 private:
-	float cannon_orientation;
+	float turret_orientation;
 	float chassis_orientation;
 	float speed;
 	uint32_t ammo;
