@@ -3,7 +3,7 @@
 #include "GameObject.h"
 #include "Move.h"
 
-class Tank : public GameObject 
+class Tank : public GameObject, public ICollidable
 {
 	friend class World;
 	friend class TankControl;

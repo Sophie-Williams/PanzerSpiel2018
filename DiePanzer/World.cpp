@@ -5,14 +5,10 @@
 
 
 void World::Apply_moves(uint_fast32_t tick) {
-	GameObject *object_a, *object_b;
-	Tank* tank;
-	bool collision = false;
-
 	//update all positions
-	for each (object_a in objects) {
-		if (object_a->Get_type() == ClassID::tank_standart) {
-			tank = (Tank*)object_a;
+	for each (GameObject* current_object in objects) {
+		if (current_object->Get_type() == ClassID::tank_standart) {
+			Tank* tank = (Tank*)current_object;
 			
 			Move* current_move = &(tank->Get_move());
 			if (current_move->get_tick() == tick) {
@@ -26,11 +22,20 @@ void World::Apply_moves(uint_fast32_t tick) {
 			//update position
 			tank->coordinates[0] += sin(tank->chassis_orientation)*tank->speed;	//x
 			tank->coordinates[1] += cos(tank->chassis_orientation)*tank->speed;	//y
+
+			//check for collisions with map
+			for () {
+
+			}
+
+			delete current_move;
 		}
 	}
 
-	//check for collisions and resolve them
+	//check for collisions between GameObjects and resolve them
+	bool collision = false;
 	do {
+		GameObject *object_a, *object_b;
 		uint_fast32_t i_a, i_b;
 		//check each object against every other object
 		for (i_a = 0; i_a < objects.size(); i_a++) {

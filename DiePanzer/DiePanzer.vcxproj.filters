@@ -11,6 +11,7 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="WindowsProcedure.cpp" />
     <ClCompile Include="World.cpp" />
+    <ClCompile Include="ICollidable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BotAPI.h" />
@@ -30,6 +31,7 @@
     <ClInclude Include="Vector.h" />
     <ClInclude Include="WindowsProcedure.h" />
     <ClInclude Include="World.h" />
+    <ClInclude Include="ICollidable.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

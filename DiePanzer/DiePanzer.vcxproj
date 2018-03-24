@@ -159,6 +159,7 @@
     </ClInclude>
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="InputSystem.h" />
+    <ClInclude Include="ICollidable.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Window.h" />
@@ -178,6 +179,7 @@
     </ClCompile>
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="InputSystem.cpp" />
+    <ClCompile Include="ICollidable.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="Game.cpp" />
