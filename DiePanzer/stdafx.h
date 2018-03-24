@@ -20,6 +20,7 @@
 
 // TODO: Hier auf zusätzliche Header, die das Programm erfordert, verweisen.
 #include "Game.h"
-#include "Singleton.h"
 #include "Graphics.h"
 #include "InputSystem.h"
+
+

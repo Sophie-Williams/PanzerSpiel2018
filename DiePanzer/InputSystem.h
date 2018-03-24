@@ -2,7 +2,6 @@
 #include "windows.h"
 #include <cstdint>
 #include <functional>
-#include "Singleton.h"
 
 enum keystate
 {
@@ -11,7 +10,7 @@ enum keystate
 	clicked
 };
 
-class InputSystem : public Singleton<InputSystem>
+class InputSystem
 {
 private:
 	HWND hWindow;

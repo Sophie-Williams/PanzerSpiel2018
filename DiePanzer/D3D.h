@@ -16,3 +16,5 @@
 #pragma comment (lib, "d3d11.lib")
 
 #endif
+
+using namespace DirectX;

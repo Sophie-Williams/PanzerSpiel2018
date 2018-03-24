@@ -42,7 +42,7 @@ private:
 		// Remove Callbacks 
 		for each(Name_fn_pair elem_to_remove in callbackFnRemove)
 		{
-			int size = callbackFnList.size();
+			size_t size = callbackFnList.size();
 			for (int idx = 0; idx < size; idx++)
 			{
 				if (!strcmp(elem_to_remove.first, callbackFnList[idx].first)) // if names are equal
