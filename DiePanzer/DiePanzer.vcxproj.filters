@@ -12,6 +12,7 @@
     <ClCompile Include="WindowsProcedure.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="ICollidable.cpp" />
+    <ClCompile Include="TankControl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BotAPI.h" />

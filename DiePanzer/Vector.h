@@ -155,6 +155,15 @@ public:
 		return sqrt(x*x + y*y);
 	}
 
+	/** @function: Vector2::Rotate(float angle)
+	 *  @brief: returns a rotated copy of this Vector2
+	 *  @param angle: 2pi equal a full rotation
+	 *  @return: a rotated copy of this Vector2
+	**/
+	Vector2 Rotate(float angle) const {
+		return Vector2(x*cos(angle) - y*sin(angle) , x*sin(angle) + y*cos(angle));
+	}
+
 	Vector2& operator=(const Vector2 &vOther)
 	{
 		x = vOther.x; y = vOther.y;

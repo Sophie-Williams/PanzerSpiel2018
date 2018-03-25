@@ -103,7 +103,7 @@
             </y:ModelParameter>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel>- tank : Tank</y:AttributeLabel>
+            <y:AttributeLabel>- tank : Tank*</y:AttributeLabel>
             <y:MethodLabel>+ Shoot : void
 - Reload : void
 + SetSpeed(speed : float) : float
@@ -277,7 +277,6 @@
     </node>
     <node id="n11">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
           <y:Geometry height="176.18476924189827" width="205.48802808660037" x="-92.41487145260356" y="609.4965802019556"/>
@@ -378,7 +377,6 @@
       </data>
     </edge>
     <edge id="e5" source="n1" target="n11">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-4.153517653633618"/>

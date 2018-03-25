@@ -2,8 +2,9 @@
 #include <cstdint>
 #include "GameObject.h"
 #include "Move.h"
+#include "ICollidable.h"
 
-class Tank : public GameObject, public ICollidable
+class Tank : public ICollidable
 {
 	friend class World;
 	friend class TankControl;

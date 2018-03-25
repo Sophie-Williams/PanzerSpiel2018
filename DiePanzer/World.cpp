@@ -24,9 +24,9 @@ void World::Apply_moves(uint_fast32_t tick) {
 			tank->coordinates[1] += cos(tank->chassis_orientation)*tank->speed;	//y
 
 			//check for collisions with map
-			for () {
+			//for () {
 
-			}
+			//}
 
 			delete current_move;
 		}
