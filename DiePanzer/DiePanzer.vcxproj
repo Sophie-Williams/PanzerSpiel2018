@@ -154,6 +154,7 @@
   <ItemGroup>
     <ClInclude Include="BotAPI.h" />
     <ClInclude Include="Callback.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="D3D.h" />
     <ClInclude Include="DX11Render.h">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -162,7 +163,10 @@
     </ClInclude>
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="InputSystem.h" />
+    <ClInclude Include="IRenderable.h" />
+    <ClInclude Include="Math.h" />
     <ClInclude Include="Move.h" />
+    <ClInclude Include="GameObserver.h" />
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Game.h" />
@@ -175,11 +179,14 @@
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="DX11Render.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="GameObserver.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="InputSystem.cpp" />
+    <ClCompile Include="IRenderable.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />

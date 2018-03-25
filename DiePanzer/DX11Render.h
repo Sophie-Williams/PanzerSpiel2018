@@ -21,6 +21,8 @@ public:
 	void Shutdown();
 	ID3D11Device* GetDevice();
 	ID3D11DeviceContext* GetDeviceContext();
+	void GetWorldMatrix(XMMATRIX& world);
+	void GetProjectionMatrix(XMMATRIX& projection);
 
 private:
 	bool vsync_enabled;

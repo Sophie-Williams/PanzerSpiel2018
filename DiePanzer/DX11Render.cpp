@@ -439,3 +439,13 @@ ID3D11DeviceContext * DX11Renderer::GetDeviceContext()
 	return deviceContext;
 }
 
+void DX11Renderer::GetWorldMatrix(XMMATRIX & world)
+{
+	world = worldMatrix;
+}
+
+void DX11Renderer::GetProjectionMatrix(XMMATRIX & projection)
+{
+	projection = projectionMatrix;
+}
+

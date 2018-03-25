@@ -4,6 +4,7 @@
 #include <string>
 #include <array>
 #include <fstream>
+#include <filesystem>
 
 
 ShaderManager::ShaderManager()
@@ -24,7 +25,7 @@ bool ShaderManager::Initialize(ID3D11Device* device, HWND hwnd)
 	bool result;
 
 	// Initialize the vertex and pixel shaders.
-	result = InitializeShader(device, hwnd, L"VertexShader.cso", L"PixelShader.cso");
+	result = InitializeShader(device, hwnd, L"C:\\Users\\Robin\\Documents\\Github\\PanzerSpiel2018\\x64\\Debug\\VertexShader.cso", L"C:\\Users\\Robin\\Documents\\Github\\PanzerSpiel2018\\x64\\Debug\\PixelShader.cso");
 	if (!result)
 	{
 		return false;

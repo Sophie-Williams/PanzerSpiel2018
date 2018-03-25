@@ -2,6 +2,7 @@
 #include <vector>
 #include "Game.h"
 #include "GameObject.h"
+#include "GameObserver.h"
 
 #include <cstdint>
 #include <cmath>
@@ -19,10 +20,12 @@ class World
 private:
 	MapTile map[WORLD_DEFAULT_WIDTH][WORLD_DEFAULT_HEIGHT];
 	std::vector<GameObject*> objects;
+	GameObserver* observer; 
 
 public:
 	World();
 	~World();
 
+	bool Initialize();
 	void Apply_moves(uint_fast32_t tick);
 };

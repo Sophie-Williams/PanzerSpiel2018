@@ -1,8 +1,25 @@
 #include "stdafx.h"
 #include "World.h"
 #include "Tank.h"
+#include "Game.h"
+#include "Vector.h"
 
+World::World()
+{
+}
 
+bool World::Initialize()
+{
+	Graphics* graphics = application->GetGraphicsInterface();
+	observer = new GameObserver();
+
+	Vector startpos{ 0.0f, 0.0f, -20.0f };
+	if (!observer->Initialize(startpos, graphics->GetCamera()))
+	{
+		return false;
+	}
+	return true;
+}
 
 void World::Apply_moves(uint_fast32_t tick) {
 	GameObject *object_a, *object_b;

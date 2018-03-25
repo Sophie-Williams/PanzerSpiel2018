@@ -1,5 +1,88 @@
 #include "stdafx.h"
 #include "InputSystem.h"
+#include "Camera.h"
+#include "Game.h"
+#include <windowsx.h>
+
+void InputSystem::TrapMouse(HWND hwnd, POINT window_center)
+{
+	RECT rect;
+
+	GetClientRect(hwnd, &rect);
+
+	POINT ul;
+	ul.x = rect.left;
+	ul.y = rect.top;
+
+	POINT lr;
+	lr.x = rect.right;
+	lr.y = rect.bottom;
+
+	MapWindowPoints(hwnd, nullptr, &ul, 1);
+	MapWindowPoints(hwnd, nullptr, &lr, 1);
+
+	rect.left = ul.x;
+	rect.top = ul.y;
+
+	rect.right = lr.x;
+	rect.bottom = lr.y;
+
+	ClipCursor(&rect);
+	ShowCursor(false);
+	SetCursorPos(window_center.x, window_center.y);
+	trapped_mouse = true;
+}
+
+void InputSystem::ReleaseMouse()
+{
+	ShowCursor(true);
+	ClipCursor(nullptr);
+	trapped_mouse = false;
+}
+
+// TODO:: add all mousedeltas that are in the same tick
+void InputSystem::CaptureMouseMovement(LPARAM mouse)
+{
+	// check if the window ha trapped the mouse
+	if (!trapped_mouse)	return;
+	
+	Graphics* graphics = application->GetGraphicsInterface();
+	POINT currentPos, window_position, window_center;
+
+	window_center = graphics->GetWindowCenter();
+
+	currentPos.x = GET_X_LPARAM(mouse);
+	currentPos.y = GET_Y_LPARAM(mouse);
+
+	ClientToScreen(graphics->GetWindowHandle(), &currentPos);
+
+
+	// add all mousedeltas of the same tick, in case we get multiple WM_MOUSEMOVE in one tick
+	static uint32_t previous_tick = 0;
+	uint32_t current_tick = application->GetCurrentTick();
+
+	if (previous_tick == current_tick)
+	{
+		// accumulate
+		mouseDelta.x += currentPos.x - window_center.x;
+		mouseDelta.y += currentPos.y - window_center.y;
+	}
+	else
+	{
+		// overwrite
+		mouseDelta.x = currentPos.x - window_center.x;
+		mouseDelta.y = currentPos.y - window_center.y;
+		previous_tick = current_tick;
+	}	
+
+	SetCursorPos(window_center.x, window_center.y);
+}
+	
+
+POINT InputSystem::GetMouseDelta()
+{
+	return mouseDelta;
+}
 
 void InputSystem::SetKeystate(uint32_t vkey, keystate state)
 {
@@ -43,4 +126,9 @@ void InputSystem::RegisterHotkey(uint32_t vkey, std::function<void(void)> func)
 void InputSystem::RemoveHotkey(std::uint32_t vkey)
 {
 	hotkeys[vkey] = nullptr;
+}
+
+void InputSystem::RegisterMouseHook(std::function<void(POINT)> func)
+{
+	mousehooks.push_back(func);
 }

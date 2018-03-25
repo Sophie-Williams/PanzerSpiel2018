@@ -10,6 +10,9 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="IRenderable.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="GameObserver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BotAPI.h" />
@@ -29,6 +32,10 @@
     <ClInclude Include="World.h" />
     <ClInclude Include="D3D.h" />
     <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="IRenderable.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="GameObserver.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

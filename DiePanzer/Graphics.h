@@ -1,5 +1,8 @@
 #pragma once
 #include "DX11Render.h"
+#include "Camera.h"
+#include "ShaderManager.h"
+#include "IRenderable.h"
 
 class Graphics
 {
@@ -11,14 +14,13 @@ public:
 	bool Initialize();
 	HWND GetWindowHandle();
 
-	inline unsigned int GetClientSizeWidth()
-	{
-		return client_size.right -client_size.left;
-	}
-	inline unsigned int GetClientSizeHeight()
-	{
-		return client_size.bottom - client_size.top;
-	}
+	// for observer 
+	Camera* GetCamera();
+
+	POINT GetWindowCenter();
+	POINT GetWindowPos();
+	unsigned int GetClientSizeWidth();
+	unsigned int GetClientSizeHeight();
 
 private:
 	HWND InitWindow(const RECT & size, const DWORD style);
@@ -30,4 +32,7 @@ private:
 	RECT client_size;
 	HWND hWindow;
 	DX11Renderer* renderer;
+	ShaderManager* shaders;
+	Camera* camera;
+	IRenderable* model;
 };
