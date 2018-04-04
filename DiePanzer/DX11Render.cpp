@@ -360,15 +360,35 @@ bool DX11Renderer::Initialize(HWND window, unsigned int screenWidth, unsigned in
 	screenAspect = (float)screenWidth / (float)screenHeight;
 
 	// Create the projection matrix for 3D rendering.
-	projectionMatrix = XMMatrixPerspectiveFovLH(fieldOfView, screenAspect, nearplane, farplane);
+	MakeProjectionMatrix(screenAspect, fieldOfView, nearplane, farplane, true, projectionMatrix);
 
 	// Initialize the world matrix to the identity matrix.
-	worldMatrix = XMMatrixIdentity();
-
-	// Create an orthographic projection matrix for 2D rendering.
-	orthoMatrix = XMMatrixOrthographicLH((float)screenWidth, (float)screenHeight, nearplane, farplane);
-
+	worldMatrix = Matrix4f::Identity();
+	
 	return true;
+}
+
+void DX11Renderer::MakeProjectionMatrix(float aspect, float fov, float near_z, float far_z, bool leftHanded, Matrix4f& ppm)
+{
+	ppm.Identity();
+
+	if (fov <= 0 || aspect == 0)
+	{
+		assert(fov > 0 && aspect != 0);
+		return;
+	}
+	
+	float frustumDepth = far_z - near_z;
+	float oneOverDepth = 1 / frustumDepth;
+
+	float scale = 1 / tan(0.5f * fov);
+		
+	ppm(1, 1) = scale;
+	ppm(0, 0) = (leftHanded ? 1 : -1) * scale / aspect;
+	ppm(2, 2) = far_z * oneOverDepth;
+	ppm(3, 2) = (-far_z * near_z) * oneOverDepth;
+	ppm(2, 3) = 1;
+	ppm(3, 3) = 0;
 }
 
 void DX11Renderer::Shutdown()
@@ -439,12 +459,12 @@ ID3D11DeviceContext * DX11Renderer::GetDeviceContext()
 	return deviceContext;
 }
 
-void DX11Renderer::GetWorldMatrix(XMMATRIX & world)
+void DX11Renderer::GetWorldMatrix(Matrix4f& world)
 {
 	world = worldMatrix;
 }
 
-void DX11Renderer::GetProjectionMatrix(XMMATRIX & projection)
+void DX11Renderer::GetProjectionMatrix(Matrix4f& projection)
 {
 	projection = projectionMatrix;
 }

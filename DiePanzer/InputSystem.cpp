@@ -6,28 +6,6 @@
 
 void InputSystem::TrapMouse(HWND hwnd, POINT window_center)
 {
-	RECT rect;
-
-	GetClientRect(hwnd, &rect);
-
-	POINT ul;
-	ul.x = rect.left;
-	ul.y = rect.top;
-
-	POINT lr;
-	lr.x = rect.right;
-	lr.y = rect.bottom;
-
-	MapWindowPoints(hwnd, nullptr, &ul, 1);
-	MapWindowPoints(hwnd, nullptr, &lr, 1);
-
-	rect.left = ul.x;
-	rect.top = ul.y;
-
-	rect.right = lr.x;
-	rect.bottom = lr.y;
-
-	ClipCursor(&rect);
 	ShowCursor(false);
 	SetCursorPos(window_center.x, window_center.y);
 	trapped_mouse = true;
@@ -73,15 +51,19 @@ void InputSystem::CaptureMouseMovement(LPARAM mouse)
 		mouseDelta.x = currentPos.x - window_center.x;
 		mouseDelta.y = currentPos.y - window_center.y;
 		previous_tick = current_tick;
-	}	
-
+	}
 	SetCursorPos(window_center.x, window_center.y);
 }
 	
+void InputSystem::Tick()
+{
+	mouseDelta_output = mouseDelta;
+	mouseDelta = {0, 0};
+}
 
 POINT InputSystem::GetMouseDelta()
-{
-	return mouseDelta;
+{	
+	return mouseDelta_output;
 }
 
 void InputSystem::SetKeystate(uint32_t vkey, keystate state)

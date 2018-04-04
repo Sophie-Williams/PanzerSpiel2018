@@ -1,9 +1,4 @@
 #pragma once
-// rip d3dx
-#include <DirectXMath.h>
-#include <DirectXPackedVector.h>
-#include <DirectXColors.h>
-#include <DirectXCollision.h>
 
 #ifdef _WIN64
 
@@ -16,6 +11,3 @@
 #pragma comment (lib, "d3d11.lib")
 
 #endif
-
-
-using namespace DirectX;

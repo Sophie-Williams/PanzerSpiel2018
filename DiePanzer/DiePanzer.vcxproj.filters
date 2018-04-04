@@ -10,9 +10,11 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
-    <ClCompile Include="IRenderable.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="GameObserver.cpp" />
+    <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="GameObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BotAPI.h" />
@@ -28,20 +30,23 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Tank.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Vector.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="D3D.h" />
     <ClInclude Include="ShaderManager.h" />
-    <ClInclude Include="IRenderable.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="GameObserver.h" />
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="IRenderable.h" />
+    <ClInclude Include="Model.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="PixelShader.hlsl" />
-    <FxCompile Include="VertexShader.hlsl" />
+    <FxCompile Include="VSTexture.hlsl" />
+    <FxCompile Include="VSColor.hlsl" />
+    <FxCompile Include="PSColor.hlsl" />
+    <FxCompile Include="PSTexture.hlsl" />
   </ItemGroup>
 </Project>

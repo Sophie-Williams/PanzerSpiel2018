@@ -115,6 +115,8 @@ void Game::MainLoop()
 			std::chrono::milliseconds start = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch());
 			// Collect input			
 			//CreateMove.Call(tick);
+			inputsystem->Tick();
+
 
 			// Capture and Release Mouse
 			if (inputsystem->WasKeyClicked(VK_ESCAPE))
@@ -131,7 +133,7 @@ void Game::MainLoop()
 			// Draw
 			InvalidateRect(graphics->GetWindowHandle(), NULL, false); // force repaint
 
-			// advance one tick
+		    // advance one tick
 			tick++;
 
 			long long sleepamount = start.count() + (long long)(MS_PER_TICK + 0.5f) - std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();

@@ -3,6 +3,12 @@
 #include <Dwmapi.h> 
 #pragma comment(lib, "Dwmapi.lib")
 #include "Color.h"
+#include "World.h"
+#include "Eigen/Dense"
+#include "IRenderable.h"
+#include "Tank.h"
+
+using namespace Eigen;
 
 Graphics::Graphics()
 {
@@ -32,22 +38,28 @@ void Graphics::Frame()
 	if (!is_initialized)
 		return;
 
-	XMMATRIX worldMatrix, viewMatrix, projectionMatrix;
+	World* world = application->GetWorld();
+
+	Matrix4f worldMatrix, viewMatrix, projectionMatrix;
 
 	renderer->BeginScene(Color{0.2f,0.2f,0.2f,1.0f});
 
+	world->observer->Update();
 	camera->Update();
 	
-	renderer->GetWorldMatrix(worldMatrix);
 	camera->GetViewMatrix(viewMatrix);
 	renderer->GetProjectionMatrix(projectionMatrix);
 
-	model->Render(renderer->GetDeviceContext());
-	shaders->Render(renderer->GetDeviceContext(),model->GetIndexCount(),worldMatrix,viewMatrix,projectionMatrix);
-
-	// render map
-	// for each IRenderObject -> Render 
-
+	for each (GameObject* obj in world->objects) 
+	{
+		if (obj->GetIdentity() & ObjectIdentity::IRenderable)
+		{
+			IRenderable* renderobj = dynamic_cast<IRenderable*>(obj);
+			renderobj->Render(renderer, worldMatrix);
+			shaders->Render(renderer->GetDeviceContext(), renderobj->GetIndexCount(), worldMatrix, viewMatrix, projectionMatrix, NULL);
+		}
+	}
+	
 	renderer->EndScene();
 }
 
@@ -119,12 +131,8 @@ bool Graphics::Initialize()
 
 	camera = new Camera();
 
-	model = new IRenderable();
-	model->Initialize(renderer->GetDevice());
-
 	shaders = new ShaderManager();
 	shaders->Initialize(renderer->GetDevice(), hWindow);
-
 
 	// now we can start to render
 	is_initialized = true;
@@ -141,12 +149,34 @@ Camera * Graphics::GetCamera()
 	return camera;
 }
 
+DX11Renderer * Graphics::GetRenderer()
+{
+	return renderer;
+}
+
 POINT Graphics::GetWindowCenter()
 {
 	RECT rect;
-	GetWindowRect(hWindow, &rect);
+	GetClientRect(hWindow, &rect);
 
-	return POINT{ (long)((float)rect.left + (float)(rect.right - rect.left) * 0.5f), (long)((float)rect.left + (float)(rect.bottom - rect.top) * 0.5f) };
+	POINT ul;
+	ul.x = rect.left;
+	ul.y = rect.top;
+
+	POINT lr;
+	lr.x = rect.right;
+	lr.y = rect.bottom;
+
+	MapWindowPoints(hWindow, nullptr, &ul, 1);
+	MapWindowPoints(hWindow, nullptr, &lr, 1);
+
+	rect.left = ul.x;
+	rect.top = ul.y;
+
+	rect.right = lr.x;
+	rect.bottom = lr.y;
+
+	return POINT{ (long)((float)rect.left + (float)(rect.right - rect.left) * 0.5f), (long)((float)rect.top + (float)(rect.bottom - rect.top) * 0.5f) };
 }
 
 POINT Graphics::GetWindowPos()

@@ -1,33 +1,31 @@
 #pragma once
+#include "GameObject.h"
+#include "Model.h"
+#include "Eigen\Dense"
+#include "D3D.h"
 
+class DX11Renderer;
 
 class IRenderable
 {
-private:
-	struct VertexType
+protected:
+	IRenderable()
 	{
-		XMFLOAT3 position;
-		XMFLOAT4 color;
-	};
+		world = Eigen::Matrix4f::Identity();
+	}
+	~IRenderable()
+	{
+
+	}
+protected:
+	Model model;
+	Eigen::Matrix4f world;
 
 public:
-	IRenderable();
-	~IRenderable();
-
-public:
-	bool Initialize(ID3D11Device*);
-	void Shutdown();
-	void Render(ID3D11DeviceContext*);
-	
-	int GetIndexCount();
-
-private:
-	bool InitializeBuffers(ID3D11Device*);
-	void ShutdownBuffers();
-	void RenderBuffers(ID3D11DeviceContext*);
-
-private:
-	ID3D11Buffer *vertexBuffer, *indexBuffer;
-	int vertexCount, indexCount;
-
+	bool Initialize(ID3D11Device* device) { return model.Initialize(device); }
+	const Eigen::Matrix4f& GetWorldMatrix() { return world; }
+	int GetIndexCount() { return model.GetIndexCount(); }
+	virtual void Render(DX11Renderer*, Eigen::Matrix4f& world) = 0;
 };
+
+

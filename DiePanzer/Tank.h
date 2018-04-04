@@ -2,8 +2,10 @@
 #include <cstdint>
 #include "GameObject.h"
 #include "Move.h"
+#include "IRenderable.h"
 
-class Tank : public GameObject 
+
+class Tank :public IRenderable, public GameObject 
 {
 	friend class World;
 	friend class TankControl;
@@ -18,11 +20,9 @@ private:
 	Move nextMove;
 
 public:
-	Move Get_move() { return nextMove; }
+	Tank(Eigen::Vector3f position);
+	virtual void Render(DX11Renderer * renderer, Eigen::Matrix4f& world);
+	virtual int GetIdentity() { return  ObjectIdentity::ICollideable | ObjectIdentity::IRenderable | ObjectIdentity::Tank; }
+	Move Get_move() { return nextMove; }	
 
-	// Geerbt über GameObject
-	ClassID Tank::Get_type()
-	{
-		return ClassID::tank_standart;
-	}
 };

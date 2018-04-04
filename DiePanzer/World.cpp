@@ -2,7 +2,9 @@
 #include "World.h"
 #include "Tank.h"
 #include "Game.h"
-#include "Vector.h"
+#include "Eigen/Dense"
+
+using namespace Eigen;
 
 World::World()
 {
@@ -13,11 +15,16 @@ bool World::Initialize()
 	Graphics* graphics = application->GetGraphicsInterface();
 	observer = new GameObserver();
 
-	Vector startpos{ 0.0f, 0.0f, -20.0f };
+	Vector3f startpos{ 0.0f, 0.0f, -5.0f };
 	if (!observer->Initialize(startpos, graphics->GetCamera()))
 	{
 		return false;
 	}
+
+	Tank* tank = new Tank(Vector3f(0.f, 0.f, 0.f));
+	tank->Initialize(graphics->GetRenderer()->GetDevice());
+	objects.push_back(tank);
+
 	return true;
 }
 
@@ -28,7 +35,7 @@ void World::Apply_moves(uint_fast32_t tick) {
 
 	//update all positions
 	for each (object_a in objects) {
-		if (object_a->Get_type() == ClassID::tank_standart) {
+		if (object_a->GetIdentity() & ObjectIdentity::Tank) {
 			tank = (Tank*)object_a;
 			
 			Move* current_move = &(tank->Get_move());

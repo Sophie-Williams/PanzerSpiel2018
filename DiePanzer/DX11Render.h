@@ -2,7 +2,9 @@
 #include <windows.h>
 #include "D3D.h"
 #include "Color.h"
+#include "Eigen/Dense"
 
+using namespace Eigen;
 
 struct Vertex
 {
@@ -18,11 +20,12 @@ public:
 	~DX11Renderer();
 
 	bool Initialize(HWND window, unsigned int screenWidth, unsigned int screenHeight, bool enable_vsync, bool fullscreen, float nearplane, float farplane);
+	void MakeProjectionMatrix(float aspect, float fov, float near_z, float far_z, bool leftHanded, Matrix4f & ppm);
 	void Shutdown();
 	ID3D11Device* GetDevice();
 	ID3D11DeviceContext* GetDeviceContext();
-	void GetWorldMatrix(XMMATRIX& world);
-	void GetProjectionMatrix(XMMATRIX& projection);
+	void GetWorldMatrix(Matrix4f& world);
+	void GetProjectionMatrix(Matrix4f& projection);
 
 private:
 	bool vsync_enabled;
@@ -39,7 +42,7 @@ private:
 	ID3D11DepthStencilState* depthStencilState;
 	ID3D11DepthStencilView* depthStencilView;
 	ID3D11RasterizerState* rasterState;
-	XMMATRIX projectionMatrix;
-	XMMATRIX worldMatrix;
-	XMMATRIX orthoMatrix;
+	Matrix4f projectionMatrix;
+	Matrix4f worldMatrix;
+	Matrix4f orthoMatrix;
 };

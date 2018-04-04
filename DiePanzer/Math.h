@@ -2,5 +2,18 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-#define RAD_TO_DEG(x) (x * (180.0f / M_PI))
-#define DEG_TO_RAD(x) (x * (M_PI / 180.0f))
+#ifndef M_PI
+	#define M_PI		3.14159265358979323846	// matches value in gcc v2 math.h
+#endif
+
+#define M_PI_F		((float)(M_PI))	// Shouldn't collide with anything.
+
+#ifndef RAD2DEG
+	#define RAD_TO_DEG( x  )  ( (float)(x) * (float)(180.f / M_PI_F) )
+#endif
+
+#ifndef DEG2RAD
+	#define DEG_TO_RAD( x  )  ( (float)(x) * (float)(M_PI_F / 180.f) )
+#endif
+
+

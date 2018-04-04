@@ -17,6 +17,8 @@ class MapTile
 
 class World
 {
+	friend class Graphics;
+
 private:
 	MapTile map[WORLD_DEFAULT_WIDTH][WORLD_DEFAULT_HEIGHT];
 	std::vector<GameObject*> objects;
@@ -25,6 +27,7 @@ private:
 public:
 	World();
 	~World();
+
 
 	bool Initialize();
 	void Apply_moves(uint_fast32_t tick);

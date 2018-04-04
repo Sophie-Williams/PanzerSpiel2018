@@ -1,6 +1,16 @@
 #pragma once
 #include <cstdint>
-#include "Vector.h"
+#include "Eigen/Dense"
+
+
+class ObjectIdentity
+{
+public:
+	static const int Tank = 1 << 0;
+	static const int Bullet = 1 << 1;
+	static const int ICollideable = 1 << 3;
+	static const int IRenderable = 1 << 4;
+};
 
 enum class ClassID 
 { 
@@ -11,13 +21,12 @@ enum class ClassID
 
 class GameObject
 {
-private:
-
 protected:
-	Vector coordinates;	///element 0: x, element 1: y
+	Eigen::Vector3f coordinates;	///element 0: x, element 1: y
 	uint32_t id;
 	uint32_t faction;
+	int identity;
 public:
-	virtual ClassID Get_type() = 0;
+	virtual int GetIdentity() = 0;
 
 };

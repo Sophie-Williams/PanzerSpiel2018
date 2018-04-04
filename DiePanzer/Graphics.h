@@ -4,6 +4,7 @@
 #include "ShaderManager.h"
 #include "IRenderable.h"
 
+
 class Graphics
 {
 public:
@@ -16,7 +17,8 @@ public:
 
 	// for observer 
 	Camera* GetCamera();
-
+	
+	DX11Renderer* GetRenderer();
 	POINT GetWindowCenter();
 	POINT GetWindowPos();
 	unsigned int GetClientSizeWidth();
